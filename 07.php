@@ -1,9 +1,5 @@
 <?php
 
-use Automovil as GlobalAutomovil;
-use Transporte as GlobalTransporte;
-use TransporteInterfaz as GlobalTransporteInterfaz;
-
  include 'includes/header.php';
 ## POLIMORFISMO = PARTE DE HERENCIA Y DE INTERFACE
 
