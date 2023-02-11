@@ -1,30 +1,38 @@
-<?php include 'includes/header.php';
+<?php
+/* ABSTRACCIÓN */
+declare(strict_types = 1);
+include 'includes/header.php';
 
-// Definie o crear una clase
+// DEFINIR o crear una clase
 class Producto {
-    // Definir atributos o propiedades a la clase
-    public $nombre; // <- ATRIBUTO o PROPIEDAD
-    public $precio;
-    public $disponible;
+   
+    public function __construct(public string $nombre, public int $precio, public bool $disponible, public string $dimenciones)
+    {        
+    }     public function mostrarProducto() { // MÉTODO o FUNCIÓN
+        echo "El Producto es: " . $this->nombre . " y su precio es de: " . $this->precio . " disponible: " . $this->disponible . " sus dimenciones son: " . $this->dimenciones;
+    }
 }
 // CREAMOS el OBJETO
-$producto = new Producto();
-$producto->nombre = 'Tablet';
-$producto->precio = 200;
-$producto->disponible = true;
+$producto = new Producto('Tablet ', 300, true, '20x30');
+$producto->mostrarProducto();
 
 echo "<pre>";
 var_dump($producto);
 echo "</pre>";
 
 // REUTILIZAMOS la clase dentro del nuevo OBJETO
-$producto2 = new Producto();
-$producto2->nombre = 'Monitor Curvo';
-$producto2->precio = 300;
-$producto2->disponible = true;
+$producto2 = new Producto('Monitor Curvo', 500, true, '55');
+$producto2->mostrarProducto();
 
 echo "<pre>";
 var_dump($producto2);
+echo "</pre>";
+
+$producto3 = new Producto('Audifonos HD', 500, true, '30');
+$producto3->mostrarProducto();
+
+echo "<pre>";
+var_dump($producto3);
 echo "</pre>";
 
 include 'includes/footer.php';
